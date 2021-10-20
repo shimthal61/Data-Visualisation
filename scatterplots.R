@@ -10,4 +10,3 @@ mpg %>%
   labs(x = "City Fuel Economy (mpg)",
        y = "Engine Displacement (litres)",
        colour = "Vehicle Class")
-          

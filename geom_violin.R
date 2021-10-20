@@ -48,16 +48,24 @@ NHANES %>%
        y = "BMI")
 
 NHANES_tidied %>%
+  #Filter out so we only have education, BMI & diabetes
   filter(!is.na(Education), !is.na(BMI) & !is.na(Diabetes)) %>%
+  #What data do we want in our plot
   ggplot(aes(x = Education:Diabetes, y = BMI, colour = Education)) +
+  #What kind of plot we want
   geom_violin() +
+  #Move our points so they're not stacked
   geom_jitter(alpha = .2, width = .1) +
+  #Create boxplots and define their size
   geom_boxplot(alpha = .5) +
+  #Hide our key
   guides(colour = 'none') +
+  #Add a background theme
   theme_minimal() +
+  #Rotate our x axis labels and move them down
   theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
+  #Label our axis and create a title
   labs(title = "Examining the effect of education level on diabetes and BMI",
        x = "Education Level x Diabetes",
        y = "BMI")
-  
 
