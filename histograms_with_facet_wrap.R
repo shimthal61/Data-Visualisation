@@ -37,5 +37,4 @@ NHANES_tidied %>%
        x = 'BMI',
        y = "Number of cases") +
   facet_wrap(~ Education)
-  
              
